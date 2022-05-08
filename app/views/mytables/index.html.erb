@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>My Friend List</h1>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Twitter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mytables.each do |mytable| %>
+    <tr>
+      <td><%= mytable.first_name%></td>
+      <td><%= mytable.last_name%></td>
+      <td><%= mytable.email%></td>
+      <td><%= mytable.twitter%></td>
+      <td><%= link_to "Show", mytable %></td>
+      <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add new friend", new_mytable_path, class:"btn btn-success"%>
