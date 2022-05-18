@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+
+<%= form_tag covids_path, :method =>'get' do %>
+  <%= collection_select :covid, :id, Covid.all, :id, :GEN, prompt: "Please select a region" %>
+  <%= submit_tag "Filter"%>
+  <%= link_to "All Table", covids_path %>
+<% end %>
+
+
+<h2>Covid List</h2>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">BEZ</th>
+      <th scope="col">GEN</th>
+      <th scope="col">death_rate</th>
+      <th scope="col">cases7_per_100k</th>
+      <th scope="col">cases7_bl_per_100k</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @covids.each do |covid| %>
+    <tr>
+      <td><%= covid.id%></td>
+      <td><%= covid.BEN%></td>
+      <td><%= covid.GEN%></td>
+      <td><%= covid.death_rate%></td>
+      <td><%= covid.cases7_per_100k%></td>
+      <td><%= covid.cases7_bl_per_100k%></td>
+      <td><%= link_to "Show", covid %></td>
+      <% end %>
+  </tbody>
+</table>
+
+
+

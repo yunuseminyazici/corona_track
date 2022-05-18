@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_07_173942) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_12_215722) do
+  create_table "covids", force: :cascade do |t|
+    t.string "GEN"
+    t.string "BEN"
+    t.float "death_rate"
+    t.float "cases7_per_100k"
+    t.float "cases7_bl_per_100k"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mytables", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"

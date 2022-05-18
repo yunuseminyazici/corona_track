@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  GEN: MyString
+  BEN: MyString
+  death_rate: 1.5
+  cases7_per_100k: 1.5
+  cases7_bl_per_100k: 1.5
+
+two:
+  GEN: MyString
+  BEN: MyString
+  death_rate: 1.5
+  cases7_per_100k: 1.5
+  cases7_bl_per_100k: 1.5

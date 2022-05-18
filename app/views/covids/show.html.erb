@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @covid %>
+
+<div>
+  <%= link_to "Edit this covid", edit_covid_path(@covid) %> |
+  <%= link_to "Back to covids", covids_path %>
+
+  <%= button_to "Destroy this covid", @covid, method: :delete %>
+</div>
