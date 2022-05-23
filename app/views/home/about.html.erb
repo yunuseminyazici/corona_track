@@ -1,1 +1,18 @@
-<h1>About Us...</h1>
+<h1>Charts</h1>
+
+<div style="width: 1000px">
+<%= column_chart(@data)%>
+</div>
+
+<div style="width: 1000px">
+<%= column_chart  Covid.group_by_day(:created_at).sum(:death_rate)%>
+</div>
+
+
+<div style="width: 1000px">
+<%= pie_chart(@data)%>
+</div>
+
+<div style="width: 1000px">
+<%= area_chart(@data)%>
+</div>

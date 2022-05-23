@@ -6,11 +6,18 @@ class CovidsController < ApplicationController
   def index
     if params[:covid] and params[:covid][:id]
       @covids=Covid.search(params[:covid][:id])
+    elsif params[:BL] and params[:BL][:BL_ID]
+      @covids=Covid.search1(params[:BL][:BL_ID])
+    elsif params[:covid] and params[:covid][:created_at]
+      @covids=Covid.search2(params[:covid][:created_at])
+    elsif params[:created_at]
+      @covids=Covid.search2(params[:created_at])
     else
       @covids = Covid.all
-  end
+    #elsif params[:created_at]
+      #@covids = Covid.where("created_at LIKE ?","%#{params[:created_at]}%")
 end
-
+end
 =begin
   def index
     if params[:covid] and params[:covid][:id]
@@ -81,7 +88,8 @@ end
 
     # Only allow a list of trusted parameters through.
     def covid_params
-      params.require(:covid).permit(:GEN, :BEN, :death_rate, :cases7_per_100k, :cases7_bl_per_100k)
+      params.require(:covid).permit(:GEN, :BEN, :death_rate, :cases7_per_100k,
+      :cases7_bl_per_100k, :picked_date)
     end
 end
 

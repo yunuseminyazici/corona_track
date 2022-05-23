@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def about
+    @data = Covid.group(:BL).count
   end
 
   

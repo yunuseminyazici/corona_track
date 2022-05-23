@@ -5,8 +5,9 @@ ruby "2.7.0"
 
 gem 'faraday', '~> 2.3'
 gem 'json', '~> 2.6', '>= 2.6.1'
-
-
+gem "chartkick"
+gem "groupdate"
+#gem 'pg'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 
@@ -22,8 +23,6 @@ gem "puma", "~> 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"

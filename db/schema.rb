@@ -10,10 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_12_215722) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_19_103542) do
   create_table "covids", force: :cascade do |t|
     t.string "GEN"
-    t.string "BEN"
+    t.string "BEZ"
+    t.string "BL"
+    t.integer "BL_ID"
     t.float "death_rate"
     t.float "cases7_per_100k"
     t.float "cases7_bl_per_100k"
