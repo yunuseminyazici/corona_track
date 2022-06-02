@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <%= form_tag covids_path, :method =>'get' do %>
-  <input type="date" id="covid" name="created_at" value="2022-05-19" min="2022-05-19">
+  <input type="date" id="covid" name="created_at" min="2022-05-19">
   <%= submit_tag "Select" %>
 <% end %>
 
 
 <%= form_tag covids_path, :method =>'get' do %>
-  <%= collection_select :BL, :BL_ID, Covid.select(:BL).distinct(:BL), :BL, :BL, prompt: "Filter by BL" %>
+  <%= collection_select :covid, :BL, Covid.select(:BL).distinct(:BL), :BL, :BL, prompt: "Filter by BL" %>
   <%= submit_tag "Filter"%>
   <%= link_to "All Table", covids_path %>
 <% end %>
@@ -27,22 +27,22 @@
 <% end %>
 
 
-
-<%= params.inspect %>
 -->
+<!--<%= params.inspect %>-->
+
 
 <h2>Covid List</h2>
 <table class="table table-striped table-bordered table-hover">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">BL</th>
-      <th scope="col">BEZ</th>
+      <th scope="col">Bundesland</th>
+      <th scope="col">Bezirk</th>
       <th scope="col">GEN</th>
-      <th scope="col">death_rate</th>
-      <th scope="col">cases7_per_100k</th>
-      <th scope="col">cases7_bl_per_100k</th>
-      <th scope="col">created_at</th>
+      <th scope="col">Dath Rate</th>
+      <th scope="col">Cases Per 100k</th>
+      <th scope="col">Cases Per 100k Bundesland</th>
+      <th scope="col">Date</th>
       <th scope="col">Edit</th>
     </tr>
   </thead>

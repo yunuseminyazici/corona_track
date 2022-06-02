@@ -6,26 +6,30 @@ class CovidsController < ApplicationController
   def index
     if params[:covid] and params[:covid][:id]
       @covids=Covid.search(params[:covid][:id])
-    elsif params[:BL] and params[:BL][:BL_ID]
-      @covids=Covid.search1(params[:BL][:BL_ID])
-    elsif params[:covid] and params[:covid][:created_at]
-      @covids=Covid.search2(params[:covid][:created_at])
+
+    elsif params[:covid] and params[:covid][:BL]
+      @covids=Covid.search1(params[:covid][:BL])
+      #@covids = Covid.where("created_at LIKE ? AND BL LIKE ?","%#{@tarih}%","%#{params[:covid][:BL]}%")
+
     elsif params[:created_at]
       @covids=Covid.search2(params[:created_at])
+      #@tarih=params[:created_at]
     else
+      #@covids = Covid.where("created_at LIKE ? AND BL LIKE ?","%2022-05-23%","Hamburg")
       @covids = Covid.all
     #elsif params[:created_at]
       #@covids = Covid.where("created_at LIKE ?","%#{params[:created_at]}%")
-end
-end
+    end
+  end
+
 =begin
   def index
     if params[:covid] and params[:covid][:id]
       @covids=Covid.where("id LIKE ?","#{params[:covid][:id]}")
     else
       @covids = Covid.all
+    end
   end
-end
 =end
 
 

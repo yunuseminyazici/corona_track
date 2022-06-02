@@ -2,4 +2,50 @@
 <h1>Covid-19 Dashboard</h1>
 </div>
 
-<p>hey</p>
+
+<!--<div style="width: 1000px">
+<%= @data2.inspect %>
+</div> -->
+
+<div style="width: 1000px">
+<%= column_chart Covid.where("GEN = 'Karlsruhe'").group_by_day(:created_at).sum(:cases7_per_100k),
+xtitle: "Dates",
+ytitle: "Cases Per 100k (Karlsruhe)"%>
+</div>
+
+<div style="width: 1000px">
+<%= column_chart Covid.where("GEN = 'Stuttgart'").group_by_day(:created_at).sum(:cases7_per_100k),
+xtitle: "Dates",
+ytitle: "Cases Per 100k  (Stuttgart)"%>
+</div>
+
+<div style="width: 1000px">
+<%= column_chart Covid.where("GEN = 'Frankfurt am Main'").group_by_day(:created_at).sum(:cases7_per_100k),
+xtitle: "Dates",
+ytitle: "Cases Per 100k  (Frankfurt)"%>
+</div>
+
+
+<div style="width: 1000px">
+<%= column_chart Covid.where("BL = 'Baden-Württemberg'").group_by_day(:created_at).sum(:cases7_bl_per_100k),
+
+xtitle: "Dates",
+ytitle: "Cases Per 100k Bundesland (Baden-Württemberg)"%>
+</div>
+
+<div style="width: 1000px">
+<%= column_chart Covid.where("BL = 'Bayern'").group_by_day(:created_at).sum(:cases7_bl_per_100k),
+
+xtitle: "Dates",
+ytitle: "Cases Per 100k Bundesland (Bayern)"%>
+</div>
+
+
+<div style="width: 1000px">
+<%= pie_chart Covid.group(:BL).average(:cases7_per_100k)%>
+</div>
+
+<div style="width: 1000px">
+<%= area_chart(@data)%>
+</div>
+

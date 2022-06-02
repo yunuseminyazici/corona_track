@@ -12,9 +12,15 @@ def self.search2(params)
 	where("created_at LIKE ?","%#{params}%")
 end
 
+def self.search3(params)
+	where("created_at LIKE ? AND BL LIKE ?","%#{tarih}%","%#{params}%")
+end
+
 def formatted_date
 	attributes['created_at'].to_date
 end
+
+
 
 end
 

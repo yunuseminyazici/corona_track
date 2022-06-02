@@ -26,8 +26,7 @@ json2=json_objects['features']
 		BL_ID:json['BL_ID'],
 		death_rate: json['death_rate'],
 		cases7_per_100k: json['cases7_per_100k'],
-		cases7_bl_per_100k: json['cases7_bl_per_100k']
-		)
+		cases7_bl_per_100k: json['cases7_bl_per_100k'])
 end
 
 
